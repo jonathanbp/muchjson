@@ -485,7 +485,7 @@ class PerformanceTracker {
   }
 }
 
-async function main(dir: string | undefined) {
+export async function main(dir: string | undefined) {
   // TODO: A registry of all generators, a map of filename to generator
   const generators: Generator[] = [];
   const valueTrackers = new Map<string, ValueTracker>();
