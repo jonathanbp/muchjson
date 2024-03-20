@@ -1,16 +1,8 @@
 // deno-lint-ignore-file no-explicit-any
-import { parseArgs } from "https://deno.land/std/cli/parse_args.ts";
-import { walk } from "https://deno.land/std/fs/mod.ts";
-import { ulid } from "https://deno.land/std@0.207.0/ulid/mod.ts";
-// @deno-types="https://cdn.skypack.dev/@types/lodash?dts"
-import {
-  set,
-  get,
-  join,
-  shuffle,
-  isObject,
-  isArray,
-} from "https://cdn.skypack.dev/lodash-es?dts";
+import { parseArgs } from "jsr:@std/cli/parse_args";
+import { walk } from "jsr:@std/fs";
+import { ulid } from "jsr:@std/ulid";
+import _ from "npm:lodash@4";
 import { randomName, randomVarName } from "./names.ts";
 
 interface IValueGenerator {
@@ -60,7 +52,7 @@ class FileValueGenerator implements IValueGenerator {
         names.push(this.options.directory + "/" + entry.name);
       }
     }
-    this.filenames = shuffle(names);
+    this.filenames = _.shuffle(names);
   }
 
   // Read the file and return the content
@@ -100,7 +92,9 @@ class ReferenceValueGenerator implements IValueGenerator {
   }
 }
 
-function randomBetween({ min, max }) {
+type MinMax = { min?: number; max?: number };
+
+function randomBetween({ min, max }: MinMax) {
   return Math.floor((min || 0) + Math.random() * (max || 0));
 }
 
@@ -151,7 +145,7 @@ class JoinValueGenerator implements IValueGenerator {
       output,
     );
 
-    return prefix + join(elements, this.options?.separator || "") + suffix;
+    return prefix + _.join(elements, this.options?.separator || "") + suffix;
   }
 }
 
@@ -164,7 +158,7 @@ class CopyValueGenerator implements IValueGenerator {
   generate(current: any) {
     return (
       maybeGenerate(this.options?.prefix, this.valueTrackers, current) +
-      get(current, this.options?.from) +
+      _.get(current, this.options?.from) +
       maybeGenerate(this.options?.suffix, this.valueTrackers, current)
     );
   }
@@ -290,7 +284,7 @@ function createValueGenerator(
     case "join":
       return new JoinValueGenerator(options, valueTrackers);
     case "copy":
-      return new CopyValueGenerator(options);
+      return new CopyValueGenerator(options, valueTrackers);
     case "csv":
       return new CsvValueGenerator(options);
     case "javascript":
@@ -360,7 +354,7 @@ class Generator {
         valueTracker.add(key, value);
       }
 
-      set(output, key, value);
+      _.set(output, key, value);
     }
     return output;
   }
@@ -380,7 +374,7 @@ function flatten(target: object) {
         return;
       }
 
-      if (!isArray(value) && isObject(value) && Object.keys(value).length) {
+      if (!_.isArray(value) && _.isObject(value) && Object.keys(value).length) {
         return step(value, newKey, currentDepth || 0 + 1);
       }
 

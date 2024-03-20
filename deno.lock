@@ -2,18 +2,58 @@
   "version": "3",
   "packages": {
     "specifiers": {
-      "npm:flat": "npm:flat@6.0.1"
+      "jsr:@std/assert@^0.220.1": "jsr:@std/assert@0.220.1",
+      "jsr:@std/cli": "jsr:@std/cli@0.220.1",
+      "jsr:@std/fs": "jsr:@std/fs@0.220.1",
+      "jsr:@std/path@^0.220.1": "jsr:@std/path@0.220.1",
+      "jsr:@std/ulid": "jsr:@std/ulid@0.220.1",
+      "npm:flat": "npm:flat@6.0.1",
+      "npm:lodash-es@3": "npm:lodash-es@3.10.1",
+      "npm:lodash@4": "npm:lodash@4.17.21"
+    },
+    "jsr": {
+      "@std/assert@0.220.1": {
+        "integrity": "88710d54f3afdd7a5761e7805abba1f56cd14e4b212feffeb3e73a9f77482425"
+      },
+      "@std/cli@0.220.1": {
+        "integrity": "6c38388efc899c9d98811d38a46effe01e0d91138068483f1e6ae834caad5e82",
+        "dependencies": [
+          "jsr:@std/assert@^0.220.1"
+        ]
+      },
+      "@std/fs@0.220.1": {
+        "integrity": "7fe79c08e9e2ea6818b05f271ddba07eaed7e6dac7ce7cfb35e3f8521aa18fc1",
+        "dependencies": [
+          "jsr:@std/assert@^0.220.1",
+          "jsr:@std/path@^0.220.1"
+        ]
+      },
+      "@std/path@0.220.1": {
+        "integrity": "cc63c1b5e5192e2f718dc2f365a3514fffb26cc0380959bab0f8fb5988a52f0c"
+      },
+      "@std/ulid@0.220.1": {
+        "integrity": "e61b7cc36b8aab1a90cae0958b169a79bb71ded3cda039ba722fdc09191a5537"
+      }
     },
     "npm": {
       "flat@6.0.1": {
         "integrity": "sha512-/3FfIa8mbrg3xE7+wAhWeV+bd7L2Mof+xtZb5dRDKZ+wDvYJK4WDYeIOuOhre5Yv5aQObZrlbRmk3RTSiuQBtw==",
+        "dependencies": {}
+      },
+      "lodash-es@3.10.1": {
+        "integrity": "sha512-rBJfRKjK2GgYmj6pS243GNGtYEp8dpg+FBkEz06YVuNyujP4T20Dfu9LyoDSq6PGkNgEcUAToppLuH7GmAUnNw==",
+        "dependencies": {}
+      },
+      "lodash@4.17.21": {
+        "integrity": "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==",
         "dependencies": {}
       }
     }
   },
   "redirects": {
     "https://deno.land/std/cli/parse_args.ts": "https://deno.land/std@0.218.2/cli/parse_args.ts",
-    "https://deno.land/std/fs/mod.ts": "https://deno.land/std@0.218.2/fs/mod.ts"
+    "https://deno.land/std/fs/mod.ts": "https://deno.land/std@0.218.2/fs/mod.ts",
+    "https://deno.land/std/ulid/mod.ts": "https://deno.land/std@0.220.1/ulid/mod.ts"
   },
   "remote": {
     "https://cdn.skypack.dev/-/lodash-es@v4.17.21-rDGl8YjBUjcrrAbjNrmo/dist=es2019,mode=imports/optimized/lodash-es.js": "4a1b35d34b5e0d3ae68aa46ddaabb9700ccecb75b830974db7c46a271f10daa8",
@@ -88,6 +128,8 @@
     "https://deno.land/std@0.218.2/path/windows/normalize.ts": "78126170ab917f0ca355a9af9e65ad6bfa5be14d574c5fb09bb1920f52577780",
     "https://deno.land/std@0.218.2/path/windows/normalize_glob.ts": "9c87a829b6c0f445d03b3ecadc14492e2864c3ebb966f4cea41e98326e4435c6",
     "https://deno.land/std@0.218.2/path/windows/resolve.ts": "8dae1dadfed9d46ff46cc337c9525c0c7d959fb400a6308f34595c45bdca1972",
+    "https://deno.land/std@0.220.1/ulid/_util.ts": "27b0b5d69ab6e98406c75e85381e2dfd0b0c128b891f122a37ff2adda782e35b",
+    "https://deno.land/std@0.220.1/ulid/mod.ts": "ce79f47b0c622a917f952708d34b18591db3523f0954ba85a3887a607937f3c3",
     "https://deno.land/x/lodash@4.17.19/lodash.js": "efa0ecfaf5548e32a16e18d3700436cd146c48b4f3712f095dae6f00100018e5"
   }
 }
