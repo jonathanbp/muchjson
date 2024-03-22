@@ -4,6 +4,7 @@
     "specifiers": {
       "jsr:@std/assert@^0.220.1": "jsr:@std/assert@0.220.1",
       "jsr:@std/cli": "jsr:@std/cli@0.220.1",
+      "jsr:@std/cli@^0.220.1": "jsr:@std/cli@0.220.1",
       "jsr:@std/fs": "jsr:@std/fs@0.220.1",
       "jsr:@std/path@^0.220.1": "jsr:@std/path@0.220.1",
       "jsr:@std/ulid": "jsr:@std/ulid@0.220.1",
@@ -163,5 +164,10 @@
     "https://deno.land/std@0.220.1/ulid/_util.ts": "27b0b5d69ab6e98406c75e85381e2dfd0b0c128b891f122a37ff2adda782e35b",
     "https://deno.land/std@0.220.1/ulid/mod.ts": "ce79f47b0c622a917f952708d34b18591db3523f0954ba85a3887a607937f3c3",
     "https://deno.land/x/lodash@4.17.19/lodash.js": "efa0ecfaf5548e32a16e18d3700436cd146c48b4f3712f095dae6f00100018e5"
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/cli@^0.220.1"
+    ]
   }
 }

@@ -4,5 +4,10 @@
   "exports": "./main.ts",
   "tasks": {
     "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "@std/cli": "jsr:@std/cli@^0.220.1",
+    "@std/fs": "jsr:@std/fs@^0.220.1",
+    "@std/ulid": "jsr:@std/ulid@^0.220.1"
   }
 }

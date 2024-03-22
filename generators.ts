@@ -1,6 +1,6 @@
 // deno-lint-ignore-file no-explicit-any
 
-import { ulid } from "jsr:@std/ulid";
+import { ulid } from "@std/ulid";
 import _ from "npm:lodash@4";
 import { randomName, randomVarName } from "./names.ts";
 import { ValueTracker } from "./trackers.ts";
