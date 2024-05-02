@@ -5,6 +5,7 @@ import _ from "npm:lodash@4";
 import { randomName, randomVarName } from "./names.ts";
 import { ValueTracker } from "./trackers.ts";
 
+/** Create a value generator based on the name */
 export function createValueGenerator(
   name: string,
   options: any,
