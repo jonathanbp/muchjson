@@ -1,8 +1,8 @@
 // deno-lint-ignore-file no-explicit-any
 import { parseArgs } from "@std/cli";
 import { walk } from "@std/fs";
-import _ from "npm:lodash@4";
-import { IValueGenerator, createValueGenerator } from "./generators.ts";
+import _ from "lodash";
+import { type IValueGenerator, createValueGenerator } from "./generators.ts";
 import { ValueTracker, PerformanceTracker } from "./trackers.ts";
 
 /**

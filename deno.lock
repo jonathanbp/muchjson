@@ -1,54 +1,58 @@
 {
-  "version": "3",
-  "packages": {
-    "specifiers": {
-      "jsr:@std/assert@^0.220.1": "jsr:@std/assert@0.220.1",
-      "jsr:@std/cli": "jsr:@std/cli@0.220.1",
-      "jsr:@std/cli@^0.220.1": "jsr:@std/cli@0.220.1",
-      "jsr:@std/fs": "jsr:@std/fs@0.220.1",
-      "jsr:@std/path@^0.220.1": "jsr:@std/path@0.220.1",
-      "jsr:@std/ulid": "jsr:@std/ulid@0.220.1",
-      "npm:flat": "npm:flat@6.0.1",
-      "npm:lodash-es@3": "npm:lodash-es@3.10.1",
-      "npm:lodash@4": "npm:lodash@4.17.21"
+  "version": "5",
+  "specifiers": {
+    "jsr:@std/assert@~0.220.1": "0.220.1",
+    "jsr:@std/cli@*": "0.220.1",
+    "jsr:@std/cli@~0.220.1": "0.220.1",
+    "jsr:@std/fmt@~0.220.1": "0.220.1",
+    "jsr:@std/fs@*": "0.220.1",
+    "jsr:@std/path@~0.220.1": "0.220.1",
+    "jsr:@std/ulid@*": "0.220.1",
+    "jsr:@std/ulid@~0.220.1": "0.220.1",
+    "npm:flat@*": "6.0.1",
+    "npm:lodash-es@3": "3.10.1",
+    "npm:lodash@4": "4.17.21"
+  },
+  "jsr": {
+    "@std/assert@0.220.1": {
+      "integrity": "88710d54f3afdd7a5761e7805abba1f56cd14e4b212feffeb3e73a9f77482425",
+      "dependencies": [
+        "jsr:@std/fmt"
+      ]
     },
-    "jsr": {
-      "@std/assert@0.220.1": {
-        "integrity": "88710d54f3afdd7a5761e7805abba1f56cd14e4b212feffeb3e73a9f77482425"
-      },
-      "@std/cli@0.220.1": {
-        "integrity": "6c38388efc899c9d98811d38a46effe01e0d91138068483f1e6ae834caad5e82",
-        "dependencies": [
-          "jsr:@std/assert@^0.220.1"
-        ]
-      },
-      "@std/fs@0.220.1": {
-        "integrity": "7fe79c08e9e2ea6818b05f271ddba07eaed7e6dac7ce7cfb35e3f8521aa18fc1",
-        "dependencies": [
-          "jsr:@std/assert@^0.220.1",
-          "jsr:@std/path@^0.220.1"
-        ]
-      },
-      "@std/path@0.220.1": {
-        "integrity": "cc63c1b5e5192e2f718dc2f365a3514fffb26cc0380959bab0f8fb5988a52f0c"
-      },
-      "@std/ulid@0.220.1": {
-        "integrity": "e61b7cc36b8aab1a90cae0958b169a79bb71ded3cda039ba722fdc09191a5537"
-      }
+    "@std/cli@0.220.1": {
+      "integrity": "6c38388efc899c9d98811d38a46effe01e0d91138068483f1e6ae834caad5e82",
+      "dependencies": [
+        "jsr:@std/assert"
+      ]
     },
-    "npm": {
-      "flat@6.0.1": {
-        "integrity": "sha512-/3FfIa8mbrg3xE7+wAhWeV+bd7L2Mof+xtZb5dRDKZ+wDvYJK4WDYeIOuOhre5Yv5aQObZrlbRmk3RTSiuQBtw==",
-        "dependencies": {}
-      },
-      "lodash-es@3.10.1": {
-        "integrity": "sha512-rBJfRKjK2GgYmj6pS243GNGtYEp8dpg+FBkEz06YVuNyujP4T20Dfu9LyoDSq6PGkNgEcUAToppLuH7GmAUnNw==",
-        "dependencies": {}
-      },
-      "lodash@4.17.21": {
-        "integrity": "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==",
-        "dependencies": {}
-      }
+    "@std/fmt@0.220.1": {
+      "integrity": "3b1a698477a26b1dacbbee26db1a65030a005c6d71db3b3a0e59f8a638f04d7a"
+    },
+    "@std/fs@0.220.1": {
+      "integrity": "7fe79c08e9e2ea6818b05f271ddba07eaed7e6dac7ce7cfb35e3f8521aa18fc1",
+      "dependencies": [
+        "jsr:@std/assert",
+        "jsr:@std/path"
+      ]
+    },
+    "@std/path@0.220.1": {
+      "integrity": "cc63c1b5e5192e2f718dc2f365a3514fffb26cc0380959bab0f8fb5988a52f0c"
+    },
+    "@std/ulid@0.220.1": {
+      "integrity": "e61b7cc36b8aab1a90cae0958b169a79bb71ded3cda039ba722fdc09191a5537"
+    }
+  },
+  "npm": {
+    "flat@6.0.1": {
+      "integrity": "sha512-/3FfIa8mbrg3xE7+wAhWeV+bd7L2Mof+xtZb5dRDKZ+wDvYJK4WDYeIOuOhre5Yv5aQObZrlbRmk3RTSiuQBtw==",
+      "bin": true
+    },
+    "lodash-es@3.10.1": {
+      "integrity": "sha512-rBJfRKjK2GgYmj6pS243GNGtYEp8dpg+FBkEz06YVuNyujP4T20Dfu9LyoDSq6PGkNgEcUAToppLuH7GmAUnNw=="
+    },
+    "lodash@4.17.21": {
+      "integrity": "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
     }
   },
   "redirects": {
@@ -167,7 +171,11 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/cli@^0.220.1"
+      "jsr:@std/assert@~0.220.1",
+      "jsr:@std/cli@~0.220.1",
+      "jsr:@std/fs@~0.220.1",
+      "jsr:@std/ulid@~0.220.1",
+      "npm:lodash@4"
     ]
   }
 }
